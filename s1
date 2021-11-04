@@ -1,0 +1,44 @@
+#include <iostream>  
+
+
+using namespace std;
+
+int main()
+{
+    int age;
+    cout << "Please enter your age from 16 - 30: ";
+    cin >> age;
+    
+
+    while (!(cin >> age) || age > 30) {
+        cout << "Invalid input. Please try again." << endl;
+        cin.clear();
+        cin.ignore(123, '\n');
+    }
+    
+    if (age >= 16 && age <= 21) {
+        cout << "Do you want to go to the mall? (Y/N).\n";
+        cout << "You can do these activities:\n";
+        cout << "Shopping \n";
+        cout << "Eating in food court \n";
+        cout << "Playing in arcade \n";
+        cout << "Groceries \n"; 
+    }
+    
+    else if (age >= 22 && age <= 30) {
+        cout << "Do you want to go on a trip to Hawaii? (Y/N).\n";
+    }
+
+    char Y, N;
+    switch (age)
+    {
+    case 'Y': cout << "Enjoy.";
+        break;
+
+    case 'N': cout << "Cancelled.";
+        break;
+    }
+
+    cin.get();
+    return 0;
+}
